@@ -21,8 +21,8 @@
 
 ## Installation
 
-* Download [Tag 1.0](updateURL)
-* Drag and drop into `[standalone]`
+* Download ZIP
+* Drag and drop into `[standalone]` remove `-main` from file name
 * Restart your server
 
 ## qb-core > shared > items.lua
