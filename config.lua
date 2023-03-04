@@ -30,5 +30,5 @@ Config.ATMLocations = { -- 8 Random ATM Locations
 Config.RewardMoney = math.random(2000, 8000) -- Amount of cash you receive from the ATM
 
 Config.LuckyItem = 'weapon_pistol' -- Lucky Item
-Config.LuckyItemPossibility = math.random(1, 1) -- Lucky Item Possibility
-Config.LuckyItemVariation = math.random(1, 1) -- Luck Item Variation
+Config.LuckyItemPossibility = math.random(1, 3) -- Lucky Item Possibility
+Config.LuckyItemVariation = math.random(1, 3) -- Luck Item Variation
