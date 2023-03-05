@@ -32,15 +32,11 @@ end)
 QBCore.Functions.CreateCallback('mk-atmRobbery:server:RemoveLaptop', function(source, cb, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player ~= nil then
-        local PrimaryItem = Player.Functions.GetItemByName(item)
-        if PrimaryItem ~= nil and not Player.PlayerData.metadata['isdead'] and not Player.PlayerData.metadata['inlaststand'] then
-            cb(true)
-            Player.Functions.RemoveItem(Config.LifeInvaderVarHack, 1)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.LifeInvaderVarHack], 'remove', 1)
-        else
-            cb(false)
-        end
+    local LaptopScan = Player.Functions.GetItemByName(item)
+    if LaptopScan then
+        cb(true)
+        Player.Functions.RemoveItem(Config.LifeInvaderVarHack, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.LifeInvaderVarHack], 'remove', 1)
     else
         cb(false)
     end
@@ -50,15 +46,11 @@ end)
 QBCore.Functions.CreateCallback('mk-atmRobbery:server:RemoveBlackCard', function(source, cb, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player ~= nil then
-        local PrimaryItem = Player.Functions.GetItemByName(item)
-        if PrimaryItem ~= nil and not Player.PlayerData.metadata['isdead'] and not Player.PlayerData.metadata['inlaststand'] then
-            cb(true)
-            Player.Functions.RemoveItem(Config.ATMKeypadScrambler, 1)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.ATMKeypadScrambler], 'remove', 1)
-        else
-            cb(false)
-        end
+    local BlackCardScan = Player.Functions.GetItemByName(item)
+    if BlackCardScan then
+        cb(true)
+        Player.Functions.RemoveItem(Config.ATMKeypadScrambler, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.ATMKeypadScrambler], 'remove', 1)
     else
         cb(false)
     end
