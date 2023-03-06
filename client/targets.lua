@@ -136,7 +136,7 @@ exports['qb-target']:AddBoxZone('atmRobbery-ClintonAve-8', vector3(380.67, 322.8
 	distance = 2.5
 })
 
--- Ped / Trojan Stick Targeting --
+-- Ped / Life Invader Targeting --
 
 -- Mechanic Model / Target --
 CreateThread(function()
