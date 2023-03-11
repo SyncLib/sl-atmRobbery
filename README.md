@@ -1,11 +1,11 @@
 <br />
-  <h3 align="center">ATM ROBBERY</h3>
+  <h3 align="center">ATM ROBBERY v1.1</h3>
 
   <p align="center">
     Free, open source atm robbery using the QBCore Framework
     <br />
     <br />
-    <a href="https://youtu.be/PoupuvECWUg">Showcase</a>
+    <a href="https://youtu.be/wE1ox_tb4wU">Showcase</a>
     ·
     <a href="https://github.com/ImMacky/mk-atmRobbery/issues">Bug Report</a>
     ·
@@ -28,7 +28,7 @@
 ## qb-core > shared > items.lua
 ```lua
 	-- ATM Robbery
-	['forgedblackcard']              = {['name'] = 'forgedblackcard',               ['label'] = 'Forged Black Card',        ['weight'] = 0,         ['type'] = 'item',      ['image'] = 'forgedblackcard.png',      ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Forged Card used for ATM transactions'},
+	['rfid_disruptor']              = {['name'] = 'rfid_disruptor',               ['label'] = 'RFID Disruptor',        ['weight'] = 1000,         ['type'] = 'item',      ['image'] = 'rfid_disruptor.png',      ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = ' A Disruptor used for ATM transactions'},
 ```
 
 ## ps-dispatch > client > cl_events.lua
