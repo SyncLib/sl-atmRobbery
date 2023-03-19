@@ -5,7 +5,7 @@
     Free, open source atm robbery using the QBCore Framework
     <br />
     <br />
-    <a href="https://youtu.be/PoupuvECWUg">Showcase</a>
+    <a href="https://youtu.be/wE1ox_tb4wU">Showcase</a>
     ·
     <a href="https://github.com/ImMacky/mk-atmRobbery/issues">Bug Report</a>
     ·
