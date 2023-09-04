@@ -6,10 +6,6 @@
     <br />
     <br />
     <a href="https://youtu.be/wE1ox_tb4wU">Showcase</a>
-    ·
-    <a href="https://github.com/ImMacky/mk-atmRobbery/issues">Bug Report</a>
-    ·
-    <a href="https://github.com/ImMacky/mk-atmRobbery/issues">Suggestions</a>
   </p>
 </p>
 
