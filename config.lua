@@ -2,7 +2,7 @@ Config = {}
 
 -- Heist Config / Setup --
 Config.HeistCooldown = (60000 * 1) -- 60 seconds * minutes
-Config.RequiredPolice = 1 -- Required Police on duty
+Config.RequiredPolice = 0 -- Required Police on duty
 
 Config.RFIDPrice = 5000 -- RFID Disruptor Price
 Config.ATMRequiredItem = 'rfid_disruptor' -- Required item for the Keypad Scrambler Hack

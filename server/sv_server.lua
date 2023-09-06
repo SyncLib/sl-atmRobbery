@@ -44,7 +44,7 @@ end)
 -- Police Amount On-Duty --
 QBCore.Functions.CreateCallback('mk-atmRobbery:server:PoliceInteger', function(source, cb)
     local src = source
-    local Player = QBCore.Functions.GetPlayers(src)
+    local Player = QBCore.Functions.GetPlayer(src)
     local PoliceInteger = 0
 
     for i = 1, #Player do
