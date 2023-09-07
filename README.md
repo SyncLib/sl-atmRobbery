@@ -24,7 +24,7 @@
 ## qb-core > shared > items.lua
 ```lua
 	-- ATM Robbery
-	['rfid_disruptor']              = {['name'] = 'rfid_disruptor',               ['label'] = 'RFID Disruptor',        ['weight'] = 1000,         ['type'] = 'item',      ['image'] = 'rfid_disruptor.png',      ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = ' A Disruptor used for ATM transactions'},
+	['rfid_disruptor']              = {['name'] = 'rfid_disruptor',               ['label'] = 'RFID Disruptor',        ['weight'] = 1000,         ['type'] = 'item',      ['image'] = 'rfid_disruptor.png',      ['unique'] = false,      ['useable'] = true,     ['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = ' A Disruptor used for ATM firewalls'},
 ```
 
 ## ps-dispatch > client > cl_events.lua
