@@ -4,7 +4,7 @@ lua54 'yes'
 
 description 'Free, open source atm robbery'
 author 'Macky'
-version '1.1'
+version '1.2'
 
 server_script 'server/*.lua'
 
