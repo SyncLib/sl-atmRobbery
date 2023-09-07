@@ -24,7 +24,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                             RecentRobbery = GetGameTimer() + Config.HeistCooldown
                             exports['ps-ui']:Scrambler(function(success)
                                 if success then
-                                    QBCore.Functions.Progressbar('atm_grabing_cash', 'Grabing dispensed cash', Config.ProgressBarInteger, false, true, {
+                                    QBCore.Functions.Progressbar('atm_grabing_cash', 'Grabing cash', Config.ProgressBarInteger, false, true, {
                                         disableMovement = true,
                                         disableCarMovement = true,
                                         disableMouse = false,
@@ -40,14 +40,14 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                                 else
                                     QBCore.Functions.Notify('Pin incorrect', 'error' , 5000)
                                 end
-                            end, 'alphanumeric', 30, 0) -- (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+                            end, Config.ScramblerHackType, 20, 0) -- Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
                         end)
                     end
                 end, Config.ATMRequiredItem)
             end
         end)
     else
-        QBCore.Functions.Notify('Disruptor use detected, come back later', 'error' , 5000)
+        QBCore.Functions.Notify('Firewall breach detected, come back later', 'error' , 5000)
     end
 end)
 
