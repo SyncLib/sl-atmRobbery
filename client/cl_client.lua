@@ -20,7 +20,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                             flags = 49,
                         }, {}, {}, function()
                             ClearPedTasks(PlayerPedId())
-                            atmRobbery()
+                            Dispatch()
                             RecentRobbery = GetGameTimer() + Config.HeistCooldown
                             exports['ps-ui']:Scrambler(function(success)
                                 if success then
@@ -55,5 +55,5 @@ end)
 
 -- ATM Robbery Disptach Notification (ps-dispatch) --
 function Dispatch()
-    exports['ps-dispatch']:ATMRobbery()
+    exports['ps-dispatch']:YachtHeist()
 end
