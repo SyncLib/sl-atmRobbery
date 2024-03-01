@@ -20,7 +20,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                             flags = 49,
                         }, {}, {}, function()
                             ClearPedTasks(PlayerPedId())
-                            Dispatch()
+
                             RecentRobbery = GetGameTimer() + Config.HeistCooldown
                             exports['ps-ui']:Scrambler(function(success)
                                 if success then
