@@ -6,7 +6,7 @@ Config.RequiredPolice = 1 -- Required Police on duty
 
 Config.ATMRequiredItem = 'rfid_disruptor' -- Required item for the Keypad Scrambler Hack
 
-Config.ProgressBarInteger = 25000 -- Amount of time for all progress bars to complete
+Config.ProgressBarInteger = 5000 -- Amount of time for all progress bars to complete
 
 -- Ped Config --
 Config.ElectronicsDealerModel = `a_m_y_bevhills_01` -- Model of the Electronics Dealer
