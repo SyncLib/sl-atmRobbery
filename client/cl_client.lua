@@ -24,6 +24,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                             RecentRobbery = GetGameTimer() + Config.HeistCooldown
                             exports['ps-ui']:Scrambler(function(success)
                                 if success then
+                                    print("success")
                                     QBCore.Functions.Progressbar('atm_grabing_cash', 'Grabing cash', Config.ProgressBarInteger, false, true, {
                                         disableMovement = true,
                                         disableCarMovement = true,
@@ -38,9 +39,10 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                                         TriggerServerEvent('mk-atmRobbery:server:AddMoney')
                                     end)
                                 else
+                                    print("fail")
                                     QBCore.Functions.Notify('Pin incorrect', 'error' , 5000)
                                 end
-                            end, Config.ScramblerHackType, 20, 0) -- Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+                            end, "numeric", 30, 0) -- Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
                         end)
                     end
                 end, Config.ATMRequiredItem)
