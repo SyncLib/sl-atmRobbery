@@ -20,7 +20,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                             flags = 49,
                         }, {}, {}, function()
                             ClearPedTasks(PlayerPedId())
-
+                            exports('AtmRobbery', AtmRobbery)
                             RecentRobbery = GetGameTimer() + Config.HeistCooldown
                             exports['ps-ui']:Scrambler(function(success)
                                 if success then
@@ -42,7 +42,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                                     print("fail")
                                     QBCore.Functions.Notify('Pin incorrect', 'error' , 5000)
                                 end
-                            end, "numeric", 30, 0) -- Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+                            end, Config.ScramblerHackType, 30, 0) -- Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
                         end)
                     end
                 end, Config.ATMRequiredItem)
