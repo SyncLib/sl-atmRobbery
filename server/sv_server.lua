@@ -34,18 +34,16 @@ end)
 
 -- Police Amount On-Duty --
 QBCore.Functions.CreateCallback('mk-atmRobbery:server:PoliceInteger', function(source, cb)
-    local src = source
-    local Player = QBCore.Functions.GetPlayers()
-    local PoliceInteger = 0
-
-    for i = 1, #Player do
-        local xPlayer = QBCore.Functions.GetPlayer(Player[i])
-        if (xPlayer.PlayerData.job.name == 'police' and xPlayer.PlayerData.job.onduty) then
-            PoliceInteger = PoliceInteger + 1
+    local amount = 0
+    local players = QBCore.Functions.GetQBPlayers()
+    for _, v in pairs(players) do
+        if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
+            amount += 1
         end
     end
+    amount = amount
 
-    if PoliceInteger >= Config.RequiredPolice then
+    if amount >= Config.RequiredPolice then
         cb(true)
     else
         cb(false)
