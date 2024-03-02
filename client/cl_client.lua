@@ -2,6 +2,12 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local RecentRobbery = 0, 0, 0
 
+-- Dispatch Funtion --
+local function Dispatch() -- Uncomment either Dispatch System
+    TriggerServerEvent('police:server:policeAlert') -- Default QBCore Dispatch
+    -- exports['ps-dispatch']:SignRobbery() -- ps-dispatch
+end
+
 -- ATM RFID Disuptor (Scrambler Hack) --
 RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
     if RecentRobbery == 0 or GetGameTimer() > RecentRobbery then
@@ -52,9 +58,3 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
         QBCore.Functions.Notify('Firewall breach detected, come back later', 'error' , 5000)
     end
 end)
-
--- Dispatch Funtion --
-local function Dispatch() -- Uncomment either Dispatch System
-    TriggerServerEvent('police:server:policeAlert', 'ATM Robbery') -- Default QBCore Dispatch
-    -- exports['ps-dispatch']:atmRobbery() -- ps-dispatch
-end
