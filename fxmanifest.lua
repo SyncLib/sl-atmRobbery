@@ -6,10 +6,7 @@ description 'Free, open source atm robbery'
 author 'Macky'
 version '1.2'
 
-server_scripts {
-    'server/*.lua',
-    '@qb-policejob/main.lua',
-}
+server_script 'server/*.lua'
 
 client_script 'client/*.lua'
 
