@@ -58,4 +58,3 @@ local function Dispatch() -- Uncomment either Dispatch System
     TriggerServerEvent('police:server:policeAlert', 'ATM Robbery') -- Default QBCore Dispatch
     -- exports['ps-dispatch']:atmRobbery() -- ps-dispatch
 end
-asds
