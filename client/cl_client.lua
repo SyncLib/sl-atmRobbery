@@ -20,7 +20,7 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                             flags = 49,
                         }, {}, {}, function()
                             ClearPedTasks(PlayerPedId())
-                            exports['ps-dispatch']:atmRobbery()
+                            Dispatch()
                             RecentRobbery = GetGameTimer() + Config.HeistCooldown
                             exports['ps-ui']:Scrambler(function(success)
                                 if success then
@@ -52,3 +52,10 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
         QBCore.Functions.Notify('Firewall breach detected, come back later', 'error' , 5000)
     end
 end)
+
+-- Dispatch Funtion --
+local function Dispatch() -- Uncomment either Dispatch System
+    TriggerServerEvent('police:server:policeAlert', 'ATM Robbery') -- Default QBCore Dispatch
+    -- exports['ps-dispatch']:atmRobbery() -- ps-dispatch
+end
+asds
