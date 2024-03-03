@@ -13,7 +13,7 @@
 
 * [QBCore Framework](https://github.com/qbcore-framework)
 * [ps-ui](https://github.com/Project-Sloth/ps-ui)
-* [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch)
+* [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch) (optional `cl_client.lua`)
 
 ## Installation
 
@@ -23,49 +23,47 @@
 
 ## qb-core > shared > items.lua
 ```lua
-	-- ATM Robbery
-	['rfid_disruptor']              = {['name'] = 'rfid_disruptor',               ['label'] = 'RFID Disruptor',        ['weight'] = 1000,         ['type'] = 'item',      ['image'] = 'rfid_disruptor.png',      ['unique'] = false,      ['useable'] = true,     ['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = ' A Disruptor used for ATM firewalls'},
+    rfid_disruptor               = { name = 'rfid_disruptor', label = 'RFID Disruptor', weight = 2000, type = 'item', image = 'rfid_disruptor.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'A Disruptor used to breach ATM firewalls' },
 ```
 
-## ps-dispatch > client > cl_events.lua
+## ps-dispatch > client > alerts.lua
 ```lua
--- ATM Robbery
-local function ATMRobbery(camId)
-    local currentPos = GetEntityCoords(PlayerPedId())
-    local locationInfo = getStreetandZone(currentPos)
-    local gender = GetPedGender()
-    TriggerServerEvent("dispatch:server:notify", {
-        dispatchcodename = "atmrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-90",
-        firstStreet = locationInfo,
-        gender = gender,
-        camId = camId,
-        model = nil,
-        plate = nil,
-        priority = 2, -- priority
-        firstColor = nil,
-        automaticGunfire = false,
-        origin = {
-            x = currentPos.x,
-            y = currentPos.y,
-            z = currentPos.z
-        },
-        dispatchMessage = _U('atmrobbery'), -- message
-        job = { "police" } -- jobs that will get the alerts
-    })
+local function atmRobbery()
+    local coords = GetEntityCoords(PlayerPedId())
+
+    local dispatchData = {
+        message = locale('atmrobbery'),
+        codeName = 'signrobbery',
+        code = '10-10',
+        icon = 'fab fa-artstation',
+        priority = 2,
+        coords = coords,
+        gender = GetPlayerGender(),
+        street = GetStreetAndZone(coords),
+        alertTime = nil,
+        jobs = { 'leo'}
+    }
+
+    TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
 end
-
-exports('ATMRobbery', ATMRobbery)
+exports('atmRobbery', atmRobbery)
 ```
 
-## ps-dispatch > server > sv_dispatchcodes.lua
+## ps-dispatch > shared > config.lua
 ```lua
-	-- ATM Robbery
-	["atmrobbery"] =  {displayCode = '10-90', description = "ATM Robbery In Progress", radius = 0, recipientList = {'police'}, blipSprite = 500, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
+    ['atmrobbery'] = {
+        radius = 0,
+        sprite = 427,
+        color = 26,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
 ```
 
-## ps-dispatch > locales > locales.lua
+## ps-dispatch > locales > en.json
 ```lua
-        -- ATM Robbery
-        ['atmrobbery'] = "ATM Robbery"
+  "atmrobbery": "ATM Robbery",
 ```
