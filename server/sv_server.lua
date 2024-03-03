@@ -35,8 +35,8 @@ end)
 -- Police Amount On-Duty --
 QBCore.Functions.CreateCallback('mk-atmRobbery:server:PoliceInteger', function(source, cb)
     local src = source
-
     local amount = 0
+
     local players = QBCore.Functions.GetQBPlayers()
     for _, v in pairs(players) do
         if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
