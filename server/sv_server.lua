@@ -25,8 +25,8 @@ QBCore.Functions.CreateCallback('mk-atmRobbery:server:RemoveDisruptor', function
     local DisruptorScan = Player.Functions.GetItemByName(item)
     if DisruptorScan then
         cb(true)
-        Player.Functions.RemoveItem(Config.ATMRequiredItem, 1)
-        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.ATMRequiredItem], 'remove', 1)
+        Player.Functions.RemoveItem(item, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'remove', 1)
     else
         cb(false)
     end
@@ -35,17 +35,17 @@ end)
 -- Police Amount On-Duty --
 QBCore.Functions.CreateCallback('mk-atmRobbery:server:PoliceInteger', function(source, cb)
     local src = source
-    local amount = 0
+    local copsOnDuty = 0
 
-    local players = QBCore.Functions.GetQBPlayers()
-    for _, v in pairs(players) do
+    local Players = QBCore.Functions.GetQBPlayers()
+    for _, v in pairs(Players) do
         if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
-            amount += 1
+            copsOnDuty += 1
         end
     end
-    amount = amount
+    copsOnDuty = copsOnDuty
 
-    if amount >= Config.RequiredPolice then
+    if copsOnDuty >= Config.RequiredPolice then
         cb(true)
     else
         cb(false)
