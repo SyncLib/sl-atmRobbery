@@ -13,7 +13,7 @@
 
 * [QBCore Framework](https://github.com/qbcore-framework)
 * [ps-ui](https://github.com/Project-Sloth/ps-ui)
-* [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch) (optional `cl_client.lua`)
+* [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch) (configurable `cl_client.lua`)
 
 ## Installation
 
