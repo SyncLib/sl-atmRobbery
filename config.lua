@@ -39,6 +39,7 @@ Config.ElectronicsDealerShop = {
 Config.ATMIcon = 'fas fa-microchip' -- Icon Target for the ATM's
 Config.ATMLabel = 'Setup RFID Disruptor' -- Label Target for the ATM's
 Config.ATMLabelItem = 'rfid_disruptor' -- Required item for the Label to show on-thrid eye
+Config.InteractionDistance = 2 -- Distance at which players can interact with the atms
 
 Config.RewardMoney = math.random(2000, 6000) -- Amount of cash you receive from the ATM
 
