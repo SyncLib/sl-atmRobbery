@@ -24,7 +24,10 @@ RegisterNetEvent('mk-atmRobbery:UseDisruptor', function()
                         QBCore.Functions.TriggerCallback('mk-atmRobbery:server:RemoveDisruptor', function(ItemChecks)
                             if ItemChecks then
                                 local drillObject = CreateObject(GetHashKey('hei_prop_heist_drill'), GetEntityCoords(PlayerPedId()), true, false, false)
-                                AttachEntityToEntity(drillObject, atmObject, -1, 0.0, -0.2, 2.0, 0.0, 0.0, 0.0, true, true, true, false, 2, true)
+                                AttachEntityToEntity(drillObject, atmObject, -1, 
+                                0.0, -0.2, 2.0, 
+                                0.0, 0.0, 0.0, 
+                                true, true, true, false, 2, true)
 
                                 QBCore.Functions.Progressbar('atm_connecting_disruptor', 'Plugging in disruptor', Config.ProgressBarInteger, false, true, {
                                     disableMovement = true,
