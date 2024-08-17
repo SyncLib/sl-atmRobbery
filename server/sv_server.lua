@@ -2,7 +2,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -- Add Money to Player's Balance Once Hack is Successful / Un-Successful --
-RegisterNetEvent('mk-atmRobbery:server:AddMoney', function()
+RegisterNetEvent('sl-atmRobbery:server:AddMoney', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
@@ -19,33 +19,33 @@ RegisterNetEvent('mk-atmRobbery:server:AddMoney', function()
 end)
 
 -- Remove RFID Disruptor on-third eye of an ATM --
-QBCore.Functions.CreateCallback('mk-atmRobbery:server:RemoveDisruptor', function(source, cb, item)
+QBCore.Functions.CreateCallback('sl-atmRobbery:server:RemoveDisruptor', function(source, cb, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local DisruptorScan = Player.Functions.GetItemByName(item)
     if DisruptorScan then
         cb(true)
-        Player.Functions.RemoveItem(item, 1)
-        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'remove', 1)
+        Player.Functions.RemoveItem(Config.ATMRequiredItem, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.ATMRequiredItem], 'remove', 1)
     else
         cb(false)
     end
 end)
 
 -- Police Amount On-Duty --
-QBCore.Functions.CreateCallback('mk-atmRobbery:server:PoliceInteger', function(source, cb)
+QBCore.Functions.CreateCallback('sl-atmRobbery:server:PoliceInteger', function(source, cb)
     local src = source
-    local copsOnDuty = 0
+    local amount = 0
 
-    local Players = QBCore.Functions.GetQBPlayers()
-    for _, v in pairs(Players) do
+    local players = QBCore.Functions.GetQBPlayers()
+    for _, v in pairs(players) do
         if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
-            copsOnDuty += 1
+            amount += 1
         end
     end
-    copsOnDuty = copsOnDuty
+    amount = amount
 
-    if copsOnDuty >= Config.RequiredPolice then
+    if amount >= Config.RequiredPolice then
         cb(true)
     else
         cb(false)

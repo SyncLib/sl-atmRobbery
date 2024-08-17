@@ -25,7 +25,7 @@ CreateThread(function()
         options = {
         {
             type = 'client',
-            event = 'mk-atmRobbery:client:ElectronicsMenu',
+            event = 'sl-atmRobbery:client:ElectronicsMenu',
             icon = Config.ElectronicsDealerIcon,
             label = Config.ElectronicsDealerLabel
         }
@@ -35,7 +35,7 @@ CreateThread(function()
 end)
 
 -- Electronics Dealer Menu (qb-menu) --
-RegisterNetEvent('mk-atmRobbery:client:ElectronicsMenu', function()
+RegisterNetEvent('sl-atmRobbery:client:ElectronicsMenu', function()
     exports['qb-menu']:openMenu({
         {
             header = 'Electronics Dealer',
@@ -47,14 +47,14 @@ RegisterNetEvent('mk-atmRobbery:client:ElectronicsMenu', function()
             txt = 'Purchase useful electronics',
             icon = 'fas fa-cash-register',
             params = {
-                event = 'mk-atmRobbery:client:openShop',
+                event = 'sl-atmRobbery:client:openShop',
                 args = {}
             }
         },
     })
 end)
 
-RegisterNetEvent('mk-atmRobbery:client:openShop', function()
+RegisterNetEvent('sl-atmRobbery:client:openShop', function()
     TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Electronics Dealer', Config.ElectronicsDealerShop)
 end)
 
@@ -63,7 +63,7 @@ exports['qb-target']:AddTargetModel(Config.ATMProps,  {
 	options = {
 		{
 		type = 'client',
-		event = 'mk-atmRobbery:UseDisruptor',
+		event = 'sl-atmRobbery:UseDisruptor',
 		icon = Config.ATMIcon,
 		label = Config.ATMLabel,
 		item = Config.ATMLabelItem,
